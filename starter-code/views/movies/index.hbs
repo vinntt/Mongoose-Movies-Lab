@@ -1,0 +1,23 @@
+{{!-- Iteration #10: Listing all Movies --}}
+<h2>List of movies:</h2>
+    {{#each movies}}
+        <div>
+            {{!-- display the title, genre and plot for every movie --}}
+            <a href="/movies/{{_id}}">{{title}}</a>
+            <p>Genre: {{this.genre}}</p>
+            <p>Plot: {{this.plot}}</p>
+            {{#if this.cast}}
+            <p>Cast:</p>
+                <ul>
+                {{#each this.cast}}
+                     <li>{{this.name}}</li>
+                {{/each}}
+            </ul>
+            {{/if}}
+             <form action="/movies/{{_id}}/delete" method="POST">
+                 <button type="submit">Remove</button>
+             </form>
+        </div>
+    {{/each}}
+
+<a href="/movies/new">Add a new Movie</a>

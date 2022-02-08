@@ -1,0 +1,13 @@
+
+{{!-- Iteration #4: Adding New Celebrities --}}
+<h2>Add a new Celebrity</h2>
+{{!-- Add a <form> tag that makes a POST request to /celebrities. --}}
+<form action="/celebrities/new" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required>
+    <label for="occupation">Occupation:</label>
+    <input type="text" name="occupation" id="occupation">
+    <label for="catchPhrase">Quote:</label>
+    <input type="text" name="catchPhrase" id="catchPhrase">
+    <button type="submit">Add this celebrity</button>
+</form>
